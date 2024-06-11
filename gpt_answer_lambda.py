@@ -10,7 +10,7 @@ def lambda_handler(event, context):
     And you shouldn't provide any other descriptions or information about the text. You MUST give ONLY translated text."""
     PROMPT = "Translate the following text to "
     
-    eventbody = event["body"]
+    eventbody = json.loads(event["body"])
     
     api_key = eventbody["api_key"]
     lang = eventbody["lang"]
